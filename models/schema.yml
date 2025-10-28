@@ -1,0 +1,254 @@
+version: 2
+
+sources:
+  - name: atomic_cml_agmt
+    database: zurich
+    schema: atomic_cml_agmt
+    tables:
+    
+      - name: cml_agmt
+      - name: finc_servs_rol
+      - name: inmy_agmt
+      - name: work_captv
+      - name: work_ibnr_unclct_ded_pol
+      - name: chnl_rol
+      - name: cd
+      - name: mony_provsn_detr2
+      - name: agmt_mony_provsn_detr_rel
+      - name: mony_provsn_detr_knd
+      - name: int_org
+      - name: ctrl_ultimate_pol_nbr_gen
+      - name: typ
+      - name: work_prcg_cyc_dt
+      - name: finc_servs_prdt
+      - name: rol_plyr_cat_rel
+      - name: org_gp
+      - name: rel_typ
+      - name: int_org_rlup_mm_snpsht
+      - name: int_org_rlup
+      - name: pol_ded_plan
+      - name: extl_org
+      - name: contr_veh
+      - name: strcrl_cmpnt
+      - name: covg_cmpnt
+      - name: covg_cmpnt_mony_provsn_csh_flw
+
+models:
+  - name: cml_agmt_proc_snpsht
+    description: "Final snapshot table as per Informatica mapping"
+    columns:
+      - name: cml_agmt_id
+        description: "CML Agreement ID"
+      - name: agmt_anchr_id
+        description: "Agreement Anchor ID"
+      - name: pol_nbr
+        description: "Policy Number"
+      - name: pol_eff_dt
+        description: "Policy Effective Date"
+      - name: typ_id
+        description: "Type ID"
+      - name: inmy_agmt_anchr_id
+        description: "Inmy Agreement Anchor ID"
+      - name: acqn_cd
+        description: "Acquisition Code"
+      - name: adt_freq_cd
+        description: "Audit Frequency Code"
+      - name: bndl_cd
+        description: "Bundle Code"
+      - name: can_dt
+        description: "Cancellation Date"
+      - name: can_rsn_cd
+        description: "Cancellation Reason Code"
+      - name: ciid_match_ind
+        description: "CIID Match Indicator"
+      - name: cms_pty_id
+        description: "CMS Party ID"
+      - name: cpan_ind
+        description: "CPAN Indicator"
+      - name: cust_nbr
+        description: "Customer Number"
+      - name: dac_cd
+        description: "DAC Code"
+      - name: divd_par_cd
+        description: "Dividend Par Code"
+      - name: exc_cd
+        description: "Exception Code"
+      - name: instl_cd
+        description: "Installment Code"
+      - name: modu_nbr
+        description: "Module Number"
+      - name: mp_cd
+        description: "MP Code"
+      - name: plnd_end_dt
+        description: "Planned End Date"
+      - name: pol_contr_typ_cd
+        description: "Policy Contract Type Code"
+      - name: pol_sym_cd
+        description: "Policy Symbol Code"
+      - name: port_ind
+        description: "Port Indicator"
+      - name: pri_nmd_insd_nm
+        description: "Primary Named Insured Name"
+      - name: prcg_ofc_cd
+        description: "Processing Office Code"
+      - name: prdr_src_cd
+        description: "Producer Source Code"
+      - name: ratg_ori_cd
+        description: "Rating Origin Code"
+      - name: reins_waqs_trty_cd
+        description: "Reinsurance WAQS Treaty Code"
+      - name: renl_ind
+        description: "Renewal Indicator"
+      - name: retro_ratg_cd
+        description: "Retro Rating Code"
+      - name: rsk_typ_cd
+        description: "Risk Type Code"
+      - name: self_insd_retn_ind
+        description: "Self Insured Retention Indicator"
+      - name: sic_cd
+        description: "SIC Code"
+      - name: src_pol_nbr
+        description: "Source Policy Number"
+      - name: src_pol_eff_dt
+        description: "Source Policy Effective Date"
+      - name: src_pol_sym_cd
+        description: "Source Policy Symbol Code"
+      - name: sts_cd
+        description: "Status Code"
+      - name: undg_pgm_cd
+        description: "Underwriting Program Code"
+      - name: v_inv_pool_ind
+        description: "V Inv Pool Indicator"
+      - name: eff_fm_tistmp
+        description: "Effective From Timestamp"
+      - name: eff_to_tistmp
+        description: "Effective To Timestamp"
+      - name: pop_info_id
+        description: "Pop Info ID"
+      - name: updt_pop_info_id
+        description: "Update Pop Info ID"
+      - name: bat_id
+        description: "Batch ID"
+      - name: bil_typ_cd
+        description: "Billing Type Code"
+      - name: agmt_term_in_mnth
+        description: "Agreement Term in Months"
+      - name: contr_type_cd
+        description: "Contract Type Code"
+      - name: mkt_cd
+        description: "Market Code"
+      - name: perf_prot_ind
+        description: "Performance Protection Indicator"
+      - name: sale_dt
+        description: "Sale Date"
+      - name: mkt_prd_spec_id
+        description: "Market Product Spec ID"
+      - name: pymt_pln_cd
+        description: "Payment Plan Code"
+      - name: mstr_pol_nbr
+        description: "Master Policy Number"
+      - name: tail_expi_dt
+        description: "Tail Expiry Date"
+      - name: parnt_child_contr_typ_cd
+        description: "Parent Child Contract Type Code"
+      - name: pri_nmd_insd_fein_nbr
+        description: "Primary Named Insured FEIN Number"
+      - name: assm_ptnr_ctry_pol_id
+        description: "Assumed Partner Country Policy ID"
+      - name: assm_us_pol_nbr
+        description: "Assumed US Policy Number"
+      - name: cede_ptnr_ctry_anchr_id
+        description: "Ceded Partner Country Anchor ID"
+      - name: drvd_contr_crcy_cd
+        description: "Derived Contract Currency Code"
+      - name: frnt_cd
+        description: "Front Code"
+      - name: non_renl_rsn_cd
+        description: "Non Renewal Reason Code"
+      - name: zi_pol_sys_contr_id
+        description: "ZI Policy System Contract ID"
+      - name: crop_ins_typ_nbr
+        description: "Crop Insurance Type Number"
+      - name: crop_reins_yy
+        description: "Crop Reinsurance Year"
+      - name: drvd_sndbl_to_gvmnt_ind
+        description: "Derived Sendable to Government Indicator"
+      - name: pol_prcg_hld_rsn_cd
+        description: "Policy Processing Hold Reason Code"
+      - name: pol_prcg_sts_cd
+        description: "Policy Processing Status Code"
+      - name: src_co_cd
+        description: "Source Company Code"
+      - name: src_sys_cd
+        description: "Source System Code"
+      - name: finc_servs_rol_plyr_anchr_id_insurer
+        description: "Financial Services Role Player Anchor ID (Insurer)"
+      - name: finc_servs_rol_plyr_anchr_id_pol_adm
+        description: "Financial Services Role Player Anchor ID (Policy Administrator)"
+      - name: max_ded_amt
+        description: "Maximum Deductible Amount"
+      - name: insurer_opert_co_cd
+        description: "Insurer Operating Company Code"
+      - name: veh_new_used_ind
+        description: "Vehicle New/Used Indicator"
+      - name: veh_make_model_id
+        description: "Vehicle Make Model ID"
+      - name: finc_low_lvl_org_id
+        description: "Financial Low Level Org ID"
+      - name: sbu_ssu_id
+        description: "SBU SSU ID"
+      - name: mm_bu_id
+        description: "MM BU ID"
+      - name: actuarial_group_extl_refr_cd
+        description: "Actuarial Group External Reference Code"
+      - name: actuarial_group_catg_id
+        description: "Actuarial Group Category ID"
+      - name: actuarial_group_rol_plyr_id
+        description: "Actuarial Group Role Player ID"
+      - name: actuarial_group_ntr_id
+        description: "Actuarial Group Nature ID"
+      - name: extl_refr_cd_mbi
+        description: "MBI External Reference Code"
+      - name: mbi_catg_id
+        description: "MBI Category ID"
+      - name: mbi_rol_plyr_id
+        description: "MBI Role Player ID"
+      - name: mbi_ntr_id
+        description: "MBI Nature ID"
+      - name: prdt_extl_refr_cd
+        description: "Product External Reference Code"
+      - name: prdt_nm
+        description: "Product Name"
+      - name: prdt_spec_anchr_id
+        description: "Product Spec Anchor ID"
+      - name: int_org_extl_refr_cd
+        description: "Internal Org External Reference Code"
+      - name: int_org_rol_plyr_anchr_id
+        description: "Internal Org Role Player Anchor ID"
+      - name: chnl_rol_extl_refr_cd
+        description: "Channel Role External Reference Code"
+      - name: chnl_rol_inmy_agmt_anchr_id
+        description: "Channel Role Inmy Agreement Anchor ID"
+      - name: policy_symbol_fi
+        description: "Policy Symbol F&I"
+      - name: ult_pol_nbr
+        description: "Ultimate Policy Number"
+      - name: ult_pol_eff_dt
+        description: "Ultimate Policy Effective Date"
+      - name: min_src_pol_eff_dt
+        description: "Minimum Source Policy Effective Date"
+      - name: work_captv_undg_pgm_cd
+        description: "Work Captive Underwriting Program Code"
+      - name: ibnr_src_pol_eff_dt
+        description: "IBNR Source Policy Effective Date"
+      - name: uklp_amt
+        description: "UKLP Amount"
+      - name: uklp_knd_nm
+        description: "UKLP Kind Name"
+      - name: pst_dt
+        description: "PST Date"
+      - name: pst_dt_flg
+        description: "PST Date Flag"
+      - name: pst_typ_nm
+        description: "PST Type Name"
+
