@@ -1,0 +1,22 @@
+name: 'atomic_cml_agmt_prcs_snpsht'
+version: '1.0'
+config-version: 2
+#agg
+profile: 'default'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+models:
+  atomic_cml_agmt_prcs_snpsht:
+    +catalog: zurich
+    +schema: atomic_cml_agmt
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+      +schema: destination
