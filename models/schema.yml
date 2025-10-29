@@ -2,23 +2,41 @@ version: 2
 
 models:
   - name: agmt
+    tests:
+      - unique:
+          columns: [pol_nbr, pol_eff_dt]
     columns:
       - name: agmt_id
         tests: [unique, not_null]
       - name: typ_id
-        tests: [not_null]
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["PCR", "POR", "INS", "OTH"]
       - name: pop_info_id
         tests: [not_null]
       - name: updt_pop_info_id
       - name: bat_id
+      - name: pol_nbr
+        tests:
+          - not_null
+      - name: pol_eff_dt
+        tests:
+          - not_null
 
   - name: cml_agmt_ins
+    tests:
+      - unique:
+          columns: [pol_nbr, pol_eff_dt]
     columns:
       - name: cml_agmt_id
         tests: [unique, not_null]
       - name: agmt_anchr_id
-        tests: [not_null, relationships:
-            to: ref('agmt'), field: agmt_id]
+        tests:
+          - not_null
+          - relationships:
+              to: ref('agmt')
+              field: agmt_id
       - name: pol_nbr
         tests: [not_null]
       - name: pol_eff_dt
@@ -29,14 +47,64 @@ models:
         tests: [not_null]
       - name: updt_pop_info_id
       - name: bat_id
+      # Additional columns from your new config:
+      - name: join_flag
+        tests:
+          - accepted_values:
+              values: ["A_ONLY", "B_ONLY", "A_AND_B"]
+      - name: typ_id
+        tests:
+          - accepted_values:
+              values: ["PCR", "POR", "INS", "OTH"]
+      - name: update_flag
+        tests:
+          - accepted_values:
+              values: ["Y", "N", null]
+      - name: final_billing_type
+        tests:
+          - accepted_values:
+              values: ["MON", "ANN", "ONE", "NULL", "EDGE"]
+          - not_null
+      - name: canonical_pol_nbr
+        tests:
+          - not_null
+      - name: norm_pol_eff_dt
+        tests:
+          - not_null
+      - name: norm_pol_expi_dt
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: acqn_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: audit_freq_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: exc_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: mul_per_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: pol_sym_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: iss_ofc_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
 
   - name: cml_agmt_upd
     columns:
       - name: cml_agmt_id
         tests: [unique, not_null]
       - name: agmt_anchr_id
-        tests: [not_null, relationships:
-            to: ref('agmt'), field: agmt_id]
+        tests:
+          - not_null
+          - relationships:
+              to: ref('agmt')
+              field: agmt_id
       - name: pol_nbr
       - name: actv_rec_ind
         tests: [accepted_values: {values: ["N"]}]
@@ -50,26 +118,37 @@ models:
       - name: finc_servs_rol_id
         tests: [unique, not_null]
       - name: agmt_anchr_id
-        tests: [not_null, relationships:
-            to: ref('agmt'), field: agmt_id]
+        tests:
+          - not_null
+          - relationships:
+              to: ref('agmt')
+              field: agmt_id
       - name: pop_info_id
         tests: [not_null]
+
   - name: finc_servs_rol_por
     columns:
       - name: finc_servs_rol_id
         tests: [unique, not_null]
       - name: agmt_anchr_id
-        tests: [not_null, relationships:
-            to: ref('agmt'), field: agmt_id]
+        tests:
+          - not_null
+          - relationships:
+              to: ref('agmt')
+              field: agmt_id
       - name: pop_info_id
         tests: [not_null]
+
   - name: finc_servs_rol_ins
     columns:
       - name: finc_servs_rol_id
         tests: [unique, not_null]
       - name: agmt_anchr_id
-        tests: [not_null, relationships:
-            to: ref('agmt'), field: agmt_id]
+        tests:
+          - not_null
+          - relationships:
+              to: ref('agmt')
+              field: agmt_id
       - name: pop_info_id
         tests: [not_null]
 
@@ -79,6 +158,7 @@ models:
         tests: [unique, not_null]
       - name: pop_info_id
         tests: [not_null]
+
   - name: rol_plyr_por
     columns:
       - name: rol_plyr_id
@@ -136,6 +216,7 @@ models:
       - name: dft_date
       - name: pop_info_id
       - name: bat_id
+
   - name: error_log_eff_dt
     columns:
       - name: src_tbl_nm
@@ -145,6 +226,7 @@ models:
       - name: dft_date
       - name: pop_info_id
       - name: bat_id
+
   - name: error_log_expi_dt
     columns:
       - name: src_tbl_nm
@@ -154,6 +236,7 @@ models:
       - name: dft_date
       - name: pop_info_id
       - name: bat_id
+
   - name: error_log_cncl_dt
     columns:
       - name: src_tbl_nm
@@ -163,6 +246,7 @@ models:
       - name: dft_date
       - name: pop_info_id
       - name: bat_id
+
   - name: error_log_org_id
     columns:
       - name: src_tbl_nm

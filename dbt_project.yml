@@ -13,7 +13,7 @@ snapshot-paths: ["snapshots"]
 models:
   Snowflake:
     +database: zurich
-    +schema: atomic_cml_agmt
+    +schema: raw
     staging:
       +materialized: view
     marts:
