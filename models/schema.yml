@@ -1,0 +1,174 @@
+version: 2
+
+models:
+  - name: agmt
+    columns:
+      - name: agmt_id
+        tests: [unique, not_null]
+      - name: typ_id
+        tests: [not_null]
+      - name: pop_info_id
+        tests: [not_null]
+      - name: updt_pop_info_id
+      - name: bat_id
+
+  - name: cml_agmt_ins
+    columns:
+      - name: cml_agmt_id
+        tests: [unique, not_null]
+      - name: agmt_anchr_id
+        tests: [not_null, relationships:
+            to: ref('agmt'), field: agmt_id]
+      - name: pol_nbr
+        tests: [not_null]
+      - name: pol_eff_dt
+        tests: [not_null]
+      - name: actv_rec_ind
+        tests: [accepted_values: {values: ["Y"]}]
+      - name: pop_info_id
+        tests: [not_null]
+      - name: updt_pop_info_id
+      - name: bat_id
+
+  - name: cml_agmt_upd
+    columns:
+      - name: cml_agmt_id
+        tests: [unique, not_null]
+      - name: agmt_anchr_id
+        tests: [not_null, relationships:
+            to: ref('agmt'), field: agmt_id]
+      - name: pol_nbr
+      - name: actv_rec_ind
+        tests: [accepted_values: {values: ["N"]}]
+      - name: pop_info_id
+        tests: [not_null]
+      - name: updt_pop_info_id
+      - name: bat_id
+
+  - name: finc_servs_rol_pcr
+    columns:
+      - name: finc_servs_rol_id
+        tests: [unique, not_null]
+      - name: agmt_anchr_id
+        tests: [not_null, relationships:
+            to: ref('agmt'), field: agmt_id]
+      - name: pop_info_id
+        tests: [not_null]
+  - name: finc_servs_rol_por
+    columns:
+      - name: finc_servs_rol_id
+        tests: [unique, not_null]
+      - name: agmt_anchr_id
+        tests: [not_null, relationships:
+            to: ref('agmt'), field: agmt_id]
+      - name: pop_info_id
+        tests: [not_null]
+  - name: finc_servs_rol_ins
+    columns:
+      - name: finc_servs_rol_id
+        tests: [unique, not_null]
+      - name: agmt_anchr_id
+        tests: [not_null, relationships:
+            to: ref('agmt'), field: agmt_id]
+      - name: pop_info_id
+        tests: [not_null]
+
+  - name: rol_plyr_pcr
+    columns:
+      - name: rol_plyr_id
+        tests: [unique, not_null]
+      - name: pop_info_id
+        tests: [not_null]
+  - name: rol_plyr_por
+    columns:
+      - name: rol_plyr_id
+        tests: [unique, not_null]
+      - name: pop_info_id
+        tests: [not_null]
+
+  - name: ctrl_on_off_keys_ciid_ins
+    columns:
+      - name: ctrl_on_off_keys_id
+        tests: [unique, not_null]
+      - name: agmt_anchor_id
+        tests: [not_null]
+      - name: curr_value
+      - name: prev_value
+      - name: column_name
+      - name: level
+      - name: pop_info_id
+      - name: updt_pop_info_id
+      - name: bat_id
+
+  - name: ctrl_ctrl_on_off_keys_ciid_upd
+    columns:
+      - name: surrogate_key
+        tests: [unique, not_null]
+      - name: anchor_id
+        tests: [not_null]
+      - name: curr_value
+      - name: table_name
+      - name: step_key
+      - name: process_name
+      - name: updt_pop_info_id
+      - name: bat_id
+
+  - name: ctrl_atm_update
+    columns:
+      - name: surrogate_key
+        tests: [unique, not_null]
+      - name: anchor_id
+        tests: [not_null]
+      - name: actv_rec_ind
+      - name: eff_to_tistmp
+      - name: updt_pop_info_id
+      - name: table_name
+      - name: step_key
+      - name: process_name
+      - name: bat_id
+
+  - name: error_log_date_co_cd
+    columns:
+      - name: src_tbl_nm
+      - name: src_col_nm
+      - name: error_value
+      - name: sec_value
+      - name: dft_date
+      - name: pop_info_id
+      - name: bat_id
+  - name: error_log_eff_dt
+    columns:
+      - name: src_tbl_nm
+      - name: src_col_nm
+      - name: error_value
+      - name: sec_value
+      - name: dft_date
+      - name: pop_info_id
+      - name: bat_id
+  - name: error_log_expi_dt
+    columns:
+      - name: src_tbl_nm
+      - name: src_col_nm
+      - name: error_value
+      - name: sec_value
+      - name: dft_date
+      - name: pop_info_id
+      - name: bat_id
+  - name: error_log_cncl_dt
+    columns:
+      - name: src_tbl_nm
+      - name: src_col_nm
+      - name: error_value
+      - name: sec_value
+      - name: dft_date
+      - name: pop_info_id
+      - name: bat_id
+  - name: error_log_org_id
+    columns:
+      - name: src_tbl_nm
+      - name: src_col_nm
+      - name: error_value
+      - name: sec_value
+      - name: dft_date
+      - name: pop_info_id
+      - name: bat_id
