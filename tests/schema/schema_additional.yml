@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: cml_agmt_ins
+    tests:
+      - unique:
+          columns: [pol_nbr, pol_eff_dt]
+    columns:
+      - name: join_flag
+        tests:
+          - accepted_values:
+              values: ["A_ONLY", "B_ONLY", "A_AND_B"]
+      - name: typ_id
+        tests:
+          - accepted_values:
+              values: ["PCR", "POR", "INS", "OTH"]
+      - name: update_flag
+        tests:
+          - accepted_values:
+              values: ["Y", "N", null]
+      - name: final_billing_type
+        tests:
+          - accepted_values:
+              values: ["MON", "ANN", "ONE", "NULL", "EDGE"]
+          - not_null
+      - name: canonical_pol_nbr
+        tests:
+          - not_null
+      - name: norm_pol_eff_dt
+        tests:
+          - not_null
+      - name: norm_pol_expi_dt
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: acqn_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: audit_freq_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: exc_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: mul_per_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: pol_sym_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+      - name: iss_ofc_cd_valid
+        tests:
+          - accepted_values: {values: [0,1]}
+
+  - name: agmt
+    tests:
+      - unique:
+          columns: [pol_nbr, pol_eff_dt]
+    columns:
+      - name: typ_id
+        tests:
+          - accepted_values:
+              values: ["PCR", "POR", "INS", "OTH"]
+      - name: pol_nbr
+        tests:
+          - not_null
+      - name: pol_eff_dt
+        tests:
+          - not_null
