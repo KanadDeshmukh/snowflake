@@ -2,10 +2,14 @@ version: 2
 
 sources:
   - name: raw
+    database: zurich
+    schema: raw_agmt
     tables:
       - name: stg_pol_data_b
       - name: stg_pol_data_a
   - name: refdata
+    database: zurich
+    schema: raw_agmt
     tables:
       - name: ref_cd_mul_per
       - name: ref_cd_exc 
