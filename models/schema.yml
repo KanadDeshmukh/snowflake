@@ -1,5 +1,25 @@
 version: 2
 
+sources:
+  - name: raw
+    tables:
+      - name: stg_pol_data_b
+      - name: stg_pol_data_a
+  - name: refdata
+    tables:
+      - name: ref_cd_mul_per
+      - name: ref_cd_exc 
+      - name: ref_cd_acqn
+      - name: ref_cd_audit_freq
+      - name: ref_cd_pol_sym
+      - name: ref_cd_iss_ofc
+      - name: ref_co   
+      - name: ref_org 
+      - name: ref_currency
+      - name: ref_billing_type
+      # - name:
+      
+
 models:
   - name: agmt
     tests:
@@ -47,7 +67,6 @@ models:
         tests: [not_null]
       - name: updt_pop_info_id
       - name: bat_id
-      # Additional columns from your new config:
       - name: join_flag
         tests:
           - accepted_values:

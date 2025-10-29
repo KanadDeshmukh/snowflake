@@ -2,6 +2,8 @@ name: 'Snowflake'
 version: '1.0'
 config-version: 2
 profile: 'default'
+vars:
+  surrogate_key_treat_nulls_as_empty_strings: true
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -13,7 +15,7 @@ snapshot-paths: ["snapshots"]
 models:
   Snowflake:
     +database: zurich
-    +schema: raw
+    +schema: agmt
     staging:
       +materialized: view
     marts:

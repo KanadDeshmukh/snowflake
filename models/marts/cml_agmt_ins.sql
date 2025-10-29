@@ -1,7 +1,7 @@
 with src as (
   select 
     row_number() over (order by canonical_pol_nbr, norm_pol_eff_dt) as cml_agmt_id,
-    {{ dbt_utils.surrogate_key(['POL_NBR', 'POL_EFF_DT']) }} as agmt_anchr_id,
+    {{ dbt_utils.generate_surrogate_key (['POL_NBR', 'POL_EFF_DT']) }} as agmt_anchr_id,
     canonical_pol_nbr as pol_nbr,
     norm_pol_eff_dt as pol_eff_dt,
     TYP_ID,

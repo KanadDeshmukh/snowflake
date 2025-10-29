@@ -1,6 +1,6 @@
 with src as (
   select 
-    {{ dbt_utils.surrogate_key(['POL_NBR', 'POL_EFF_DT']) }} as agmt_id,
+    {{ dbt_utils.generate_surrogate_key (['POL_NBR', 'POL_EFF_DT']) }} as agmt_id,
     TYP_ID,
     POP_INFO_ID,
     POP_INFO_ID as updt_pop_info_id,
