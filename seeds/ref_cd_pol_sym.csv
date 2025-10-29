@@ -1,0 +1,5 @@
+cd,description
+SYM1,Valid Policy Symbol 1
+SYM2,Valid Policy Symbol 2
+BADSYM,Invalid Policy Symbol
+,Null Symbol

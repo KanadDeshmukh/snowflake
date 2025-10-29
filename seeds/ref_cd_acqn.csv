@@ -1,0 +1,6 @@
+cd,description
+ACQ1,Acquisition Channel 1
+ACQ2,Acquisition Channel 2
+ACQ3,Acquisition Channel 3
+,Missing/Blank
+ACQ_INVALID,Invalid Code

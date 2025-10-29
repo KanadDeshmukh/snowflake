@@ -1,0 +1,5 @@
+cd,description
+MULTI1,Valid Multi-period code 1
+MULTI2,Valid Multi-period code 2
+INVALID,Invalid Multi-period code
+,Null Multi-period code

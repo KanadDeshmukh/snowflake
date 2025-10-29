@@ -1,0 +1,7 @@
+cd,currency_name
+USD,US Dollar
+EUR,Euro
+JPY,Japanese Yen
+XXX,Invalid Currency
+,Null Code
+ZZZZ,Edge Value

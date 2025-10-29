@@ -1,0 +1,6 @@
+code,description,is_default
+MON,Monthly Billing,N
+ANN,Annual Billing,Y
+ONE,One-Time Billing,N
+NULL,NULL,Y
+EDGE,Edge Billing Value,N

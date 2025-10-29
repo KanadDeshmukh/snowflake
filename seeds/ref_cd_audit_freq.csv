@@ -1,0 +1,6 @@
+cd,frequency_desc
+ANN,Annual
+SEMI,Semiannual
+QTR,Quarterly
+MON,Monthly
+ANN_INV,Invalid
