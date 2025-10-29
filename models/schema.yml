@@ -3,10 +3,11 @@ version: 2
 sources:
   - name: raw
     database: zurich
-    schema: raw_agmt
+    schema: raw
     tables:
       - name: stg_pol_data_b
       - name: stg_pol_data_a
+      
   - name: refdata
     database: zurich
     schema: raw_agmt
