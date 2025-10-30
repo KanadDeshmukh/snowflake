@@ -1,0 +1,146 @@
+version: 2
+
+models:
+  - name: mntry_acct
+    description: "Loads monetary account data from SAP staging"
+    columns:
+      - name: mntry_acct_id
+        description: "Monetary Account ID"
+      - name: acct_id
+        description: "Account ID"
+      - name: typ_id
+        description: "Type ID"
+      - name: ntr_of_provsn_cd
+        description: "Nature of Provision Code"
+      - name: extl_refr_cd
+        description: "External Reference Code"
+      - name: bal_amt
+        description: "Balance Amount"
+      - name: distb_amt
+        description: "Distributed Amount"
+      - name: bal_dt
+        description: "Balance Date"
+      - name: sts_cd
+        description: "Status Code"
+      - name: actv_rec_ind
+        description: "Active Record Indicator"
+      - name: eff_fm_tistmp
+        description: "Effective From Timestamp"
+      - name: eff_to_tistmp
+        description: "Effective To Timestamp"
+      - name: pop_info_id
+        description: "Population Info ID"
+      - name: updt_pop_info_id
+        description: "Update Population Info ID"
+      - name: bat_id
+        description: "Batch ID"
+      - name: acct_nbr
+        description: "Account Number"
+      - name: acct_subpln_nbr
+        description: "Account Subplan Number"
+      - name: bnk_nm
+        description: "Bank Name"
+
+  - name: acct
+    description: "Account master data"
+    columns:
+      - name: acct_id
+        description: "Account ID"
+      - name: typ_id
+        description: "Type ID"
+      - name: pop_info_id
+        description: "Population Info ID"
+      - name: updt_pop_info_id
+        description: "Update Population Info ID"
+      - name: bat_id
+        description: "Batch ID"
+
+  - name: acct_dervn
+    description: "Account derivation details"
+    columns:
+      - name: acct_dervn_id
+        description: "Account Derivation ID"
+      - name: assm_reins_agmt_anchr_id
+        description: "Assumed Reinsurance Agreement Anchor ID"
+      - name: cede_reins_agmt_anchr_id
+        description: "Ceded Reinsurance Agreement Anchor ID"
+      - name: cmtn_agmt_anchr_id
+        description: "Commutation Agreement Anchor ID"
+      - name: co_rol_plyr_anchr_id
+        description: "Co Role Player Anchor ID"
+      - name: prem_postal_regn_anchr_id
+        description: "Premium Postal Region Anchor ID"
+      - name: trd_ptnr_rol_plyr_anchr_id
+        description: "Trade Partner Role Player Anchor ID"
+      - name: cst_ctr_id
+        description: "Cost Center ID"
+      - name: cst_ctr_txt_1
+        description: "Cost Center Text 1"
+      - name: cst_ctr_txt_2
+        description: "Cost Center Text 2"
+      - name: doc_typ_cd
+        description: "Document Type Code"
+      - name: finc_lob_cd
+        description: "Financial Line of Business Code"
+      - name: low_lvl_org_id
+        description: "Low Level Organization ID"
+      - name: pl_loc_ori_cd
+        description: "PL Location Origin Code"
+      - name: prft_ctr_id
+        description: "Profit Center ID"
+      - name: dac_cd
+        description: "DAC Code"
+      - name: prft_ctr_txt_1
+        description: "Profit Center Text 1"
+      - name: prft_ctr_txt_2
+        description: "Profit Center Text 2"
+      - name: onset_offset_ind
+        description: "Onset Offset Indicator"
+      - name: cmtn_ind
+        description: "Commutation Indicator"
+      - name: acc_ccyy
+        description: "Accounting Year"
+      - name: reins_cmtn_agmt_rel_id
+        description: "Reinsurance Commutation Agreement Relation ID"
+      - name: pol_ccyy
+        description: "Policy Year"
+      - name: retro_ratg_cd
+        description: "Retro Rating Code"
+      - name: bil_sys_cd
+        description: "Billing System Code"
+      - name: knd_cd
+        description: "Kind Code"
+      - name: actv_rec_ind
+        description: "Active Record Indicator"
+      - name: finc_acct_nbr
+        description: "Financial Account Number"
+      - name: drvd_acct_anchr_id
+        description: "Derived Account Anchor ID"
+      - name: typ_id
+        description: "Type ID"
+      - name: finc_acct_typ_id
+        description: "Financial Account Type ID"
+      - name: finc_adj_typ_id
+        description: "Financial Adjustment Type ID"
+
+  - name: acct_ent
+    description: "Account entry details"
+    columns:
+      - name: acct_ent_id
+        description: "Account Entry ID"
+      - name: acct_id
+        description: "Account ID"
+      - name: ent_typ_id
+        description: "Entry Type ID"
+      - name: ent_amt
+        description: "Entry Amount"
+      - name: ent_dt
+        description: "Entry Date"
+      - name: pop_info_id
+        description: "Population Info ID"
+      - name: updt_pop_info_id
+        description: "Update Population Info ID"
+      - name: bat_id
+        description: "Batch ID"
+      - name: actv_rec_ind
+        description: "Active Record Indicator"

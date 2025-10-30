@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: sap_stg_to_ads_zrptr
+    database: zurich
+    schema: SAP_STG_TO_ADS_ZRPTR
+    tables:
+      - name: stg_sap_dtl
+      - name: acct_dervn
+      - name: pers
+      - name: typ
+      - name: work_prcg_cyc_dt
+      - name: mntry_acct
+      - name: acct
+      - name: acct_ent
