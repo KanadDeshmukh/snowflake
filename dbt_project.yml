@@ -13,9 +13,9 @@ snapshot-paths: ["snapshots"]
 models:
   Snowflake:
     +database: zurich
-    +schema: atomic_cml_agmt
+    +schema: SAP_STG_TO_ADS_ZRPTR
     staging:
       +materialized: view
     marts:
       +materialized: table
-      +schema: mart
+      +schema: SAP_STG_TO_ADS_ZRPTR_MART
